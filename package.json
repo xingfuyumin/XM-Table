@@ -1,0 +1,27 @@
+{
+  "name": "xm-table",
+  "version": "1.0.0",
+  "description": "能处理超大数据量的高性能表格",
+  "main": "index.js",
+  "scripts": {
+    "build": "father build",
+    "data": "node test/create-test-data 50",
+    "start": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xingfuyumin/XM-Table.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xingfuyumin/XM-Table/issues"
+  },
+  "homepage": "https://github.com/xingfuyumin/XM-Table#readme",
+  "devDependencies": {
+    "father": "^2.30.21"
+  },
+  "dependencies": {
+    "react": "^18.2.0"
+  }
+}
