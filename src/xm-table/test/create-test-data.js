@@ -48,4 +48,4 @@ for (let i = 0; i < count; i += 1) {
   }
 }
 
-fs.writeFileSync('./test/test-data.json', JSON.stringify({ data, columns }, 2));
+fs.writeFileSync('src/xm-table/test/test-data.json', JSON.stringify({ data, columns }, 2));

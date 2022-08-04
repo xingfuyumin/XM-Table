@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es2016",
-    "module": "commonjs",
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react",
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
+    "types": ["jest"],
     "strict": true,
     "skipLibCheck": true,
-    "outDir": "dist"
-  },
-  "include": ["src"]
+    "declaration": true,
+    "resolveJsonModule": true,
+  }
 }

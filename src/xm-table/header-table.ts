@@ -13,6 +13,8 @@ class HeaderTable {
   }
   setOption = (columns: Column[]) => {
     this._columns = columns;
+    this._clearTable();
+    this._initTable();
   }
   setData = (data: unknown[]) => {
     this._data = data;
@@ -21,6 +23,7 @@ class HeaderTable {
 
   }
   private _initTable = () => {
+    console.log(1);
     const table = document.createElement('table');
     this._container?.appendChild(table);
     const thead = document.createElement('thead');

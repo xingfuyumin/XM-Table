@@ -1,27 +1,49 @@
 {
-  "name": "xm-table",
+  "private": true,
+  "name": "table",
   "version": "1.0.0",
-  "description": "能处理超大数据量的高性能表格",
-  "main": "index.js",
   "scripts": {
+    "start": "dumi dev",
+    "data": "node src/xm-table/test/create-test-data 100",
+    "docs:build": "dumi build",
+    "docs:deploy": "gh-pages -d docs-dist",
     "build": "father build",
-    "data": "node test/create-test-data 50",
-    "start": "tsc -w"
+    "deploy": "npm run docs:build && npm run docs:deploy",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage",
+    "prepublishOnly": "npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/xingfuyumin/XM-Table.git"
+  "files": [
+    "dist"
+  ],
+  "module": "dist/esm/index.js",
+  "typings": "dist/esm/index.d.ts",
+  "gitHooks": {
+    "pre-commit": "lint-staged"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/xingfuyumin/XM-Table/issues"
-  },
-  "homepage": "https://github.com/xingfuyumin/XM-Table#readme",
-  "devDependencies": {
-    "father": "^2.30.21"
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
   },
   "dependencies": {
-    "react": "^18.2.0"
+    "react": "^18.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.15.1",
+    "@testing-library/react": "^13.0.0",
+    "@types/jest": "^27.0.3",
+    "@umijs/fabric": "^2.8.1",
+    "@umijs/test": "^3.0.5",
+    "dumi": "^1.1.0",
+    "father": "^4.0.0-rc.2",
+    "gh-pages": "^3.0.0",
+    "lint-staged": "^10.0.7",
+    "prettier": "^2.2.1",
+    "yorkie": "^2.0.0"
   }
 }
